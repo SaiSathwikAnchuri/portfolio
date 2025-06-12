@@ -45,19 +45,19 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "alex.chen@example.com",
-      href: "mailto:alex.chen@example.com"
+      value: "saisathwik1402@gmail.com",
+      href: "mailto:saisathwik1402@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+91 8523086459",
+      href: "tel:+91 8523086459"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Hyderabad, India",
       href: "#"
     }
   ];
@@ -65,14 +65,14 @@ const ContactSection = () => {
   const socialLinks = [
     { 
       icon: Github, 
-      href: "https://github.com/alexchen", 
+      href: "https://github.com/SaiSathwikAnchuri", 
       label: "GitHub", 
       color: "hover:text-gray-300",
       description: "Check out my latest projects and contributions"
     },
     { 
       icon: Linkedin, 
-      href: "https://linkedin.com/in/alexchen", 
+      href: "https://www.linkedin.com/in/saisathwik-anchuri-604b85292", 
       label: "LinkedIn", 
       color: "hover:text-blue-400",
       description: "Connect with me professionally"
@@ -239,5 +239,4 @@ const ContactSection = () => {
     </section>
   );
 };
-
 export default ContactSection;

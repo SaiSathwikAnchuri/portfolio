@@ -14,35 +14,35 @@ const CertificationsSection = () => {
       color: "from-yellow-400 to-orange-500"
     },
     {
-      title: "Inter IT Competitive Programming Conclave",
-      issuer: "Inter IT Consortium",
-      year: "2024",
+      title: "Certified for GFG 45 days of Code",
+      issuer: "GeeksforGeeks",
+      year: "2025",
       icon: "💻",
-      description: "Competitive programming excellence recognition",
+      description: "Completed 45 days of coding challenges on GeeksforGeeks",
       color: "from-blue-500 to-cyan-500"
     },
     {
-      title: "HacktoberFest 2024 Contributor",
-      issuer: "DigitalOcean & Holopin",
+      title: "SIH Hackathon certification",
+      issuer: "Smart India Hackathon",
       year: "2024",
       icon: "🌟",
-      description: "Active contributor to open source projects during Hacktoberfest",
+      description: "Active contributor to open source projects during SIH Hackathon",
       color: "from-purple-500 to-pink-500"
     },
     {
-      title: "Cyber Security Certification",
-      issuer: "Microsoft-TataStrive",
+      title: "Cisco Java Script Essentials Certification",
+      issuer: "Cisco Networking Academy",
       year: "2024",
       icon: "🔒",
-      description: "Comprehensive cybersecurity fundamentals and best practices",
+      description: "Comprehensive JavaScript programming skills certification",
       color: "from-red-500 to-rose-500"
     },
     {
-      title: "AWS Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      year: "2024",
+      title: "Certified Smart Interviews",
+      issuer: "Smart Interviews",
+      year: "2025",
       icon: "☁️",
-      description: "Cloud computing fundamentals and AWS services expertise",
+      description: "Gained expertise in smart interview techniques and strategies",
       color: "from-orange-500 to-yellow-500"
     },
     {

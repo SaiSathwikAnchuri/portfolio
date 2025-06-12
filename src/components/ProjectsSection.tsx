@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -10,63 +9,52 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "AI-Powered E-Commerce Platform",
-      description: "Full-stack e-commerce solution with AI product recommendations, real-time inventory management, and advanced analytics dashboard.",
+      title: "Chatterbox Application",
+      description: "A chatterbox application that uses web technologies to provide personalized responses, sentiment analysis, and conversation history.",
       image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
-      tech: ["React", "Node.js", "TensorFlow", "AWS", "PostgreSQL"],
+      tech: ["React", "Node.js", "websocket", "MongoDB", "Express"],
       category: "Full-Stack",
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://github.com/SaiSathwikAnchuri/chatterbox-application",
+      githubUrl: "https://github.com/SaiSathwikAnchuri/chatterbox-application",
       featured: true
     },
     {
       id: 2,
-      title: "Real-Time Collaboration Tool",
-      description: "WebRTC-based collaboration platform with video conferencing, shared whiteboards, and real-time document editing.",
+      title: "Techlearn's company dashboard",
+      description: "Real-time company dashboard for Techlearn, featuring live data updates, interactive charts, and collaborative tools for team management.",
       image: "https://images.unsplash.com/photo-1552581234-26160f608093?w=800&h=600&fit=crop",
-      tech: ["Vue.js", "Socket.io", "WebRTC", "Docker", "Redis"],
-      category: "Frontend",
-      liveUrl: "#",
-      githubUrl: "#",
+      tech: ["Vue.js", "Socket.io", "React", "Node.js", "MongoDB"],
+      category: "Full-Stack",
+      liveUrl: "https://techlearn-frontend-w4xd.onrender.com",
+      githubUrl: "https://github.com/SaiSathwikAnchuri/Tls-solutions",
       featured: true
     },
     {
-      id: 3,
-      title: "Blockchain Voting System",
-      description: "Secure, transparent voting application using blockchain technology with smart contracts and decentralized identity verification.",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
-      tech: ["Solidity", "Web3.js", "React", "IPFS", "Ethereum"],
+      id: 4,
+      title: "A Blog Application",
+      description: "A blog application that allows users to create, read, update, and delete blog posts with a modern UI and responsive design.",
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop",
+      tech: ["Solidity", "Web3.js", "React", "MongoDB", "Express"],
       category: "Web3",
       liveUrl: "#",
       githubUrl: "#",
       featured: false
     },
     {
-      id: 4,
-      title: "IoT Dashboard & Analytics",
-      description: "Real-time IoT device monitoring dashboard with predictive analytics, alerts, and automated reporting capabilities.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      tech: ["Python", "React", "InfluxDB", "Grafana", "MQTT"],
-      category: "Backend",
-      liveUrl: "#",
-      githubUrl: "#",
+      id: 3,
+      title: "Smart Energy Management System",
+      description: "predicting the energy consumed,bills and energy savings using static data",
+      image: "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=800&h=600&fit=crop",
+      tech: [ "React", "InfluxDB", "express"],
+      category: "Full-Stack",
+      liveUrl: "https://smart-energy-vista.lovable.app/",
+      githubUrl: "https://github.com/Vishwaksen26/smart-energy-vista.git",
       featured: false
     },
     {
       id: 5,
-      title: "AR Mobile Shopping App",
-      description: "Augmented reality mobile application allowing users to visualize products in their space before purchasing.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-      tech: ["React Native", "ARCore", "Firebase", "Three.js"],
-      category: "Mobile",
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true
-    },
-    {
-      id: 6,
-      title: "ML-Powered Content Creator",
-      description: "AI content generation platform that creates articles, social media posts, and marketing copy using advanced language models.",
+      title: "AI-Immersive Chatbot",
+      description: "AI chatbot application that provides personalized responses, sentiment analysis, and conversation history.",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
       tech: ["Python", "FastAPI", "OpenAI", "React", "PostgreSQL"],
       category: "AI/ML",
@@ -113,7 +101,7 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Projects Grid - 3 per row */}
+        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <Card
@@ -140,6 +128,13 @@ const ProjectsSection = () => {
                   <Button
                     size="sm"
                     className="bg-white/20 backdrop-blur-md border border-white/30 text-white hover:bg-white/30"
+                    onClick={() => {
+                      if (project.liveUrl && project.liveUrl !== "#") {
+                        window.open(project.liveUrl, '_blank');
+                      } else {
+                        alert("Live demo not available for this project.");
+                      }
+                    }}
                   >
                     <Eye className="h-4 w-4 mr-2" />
                     View
@@ -147,6 +142,13 @@ const ProjectsSection = () => {
                   <Button
                     size="sm"
                     className="bg-white/20 backdrop-blur-md border border-white/30 text-white hover:bg-white/30"
+                    onClick={() => {
+                      if (project.githubUrl && project.githubUrl !== "#") {
+                        window.open(project.githubUrl, '_blank');
+                      } else {
+                        alert("GitHub link not available for this project.");
+                      }
+                    }}
                   >
                     <Github className="h-4 w-4 mr-2" />
                     Code
@@ -176,7 +178,6 @@ const ProjectsSection = () => {
                 <p className="text-white/70 text-sm mb-4 line-clamp-3">
                   {project.description}
                 </p>
-
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
@@ -188,22 +189,39 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-
-                {/* Action buttons */}
+                {/* Action Buttons */}
                 <div className="flex gap-3">
+                  {/* Live Demo Button */}
                   <Button
                     size="sm"
                     className="flex-1 bg-gradient-to-r from-blue-500 to-magenta-500 hover:from-blue-600 hover:to-magenta-600 text-white border-0"
+                    onClick={() => {
+                      if (project.liveUrl && project.liveUrl !== "#") {
+                        window.open(project.liveUrl, '_blank');
+                      } else {
+                        alert("Live demo not available for this project.");
+                      }
+                    }}
                   >
                     <ExternalLink className="h-4 w-4 mr-2" />
                     Live Demo
                   </Button>
+
+                  {/* GitHub Code Button */}
                   <Button
                     size="sm"
                     variant="outline"
                     className="glass-card border-white/20 text-white hover:bg-white/10"
+                    onClick={() => {
+                      if (project.githubUrl && project.githubUrl !== "#") {
+                        window.open(project.githubUrl, '_blank');
+                      } else {
+                        alert("GitHub link not available for this project.");
+                      }
+                    }}
                   >
                     <Github className="h-4 w-4" />
+                    Code
                   </Button>
                 </div>
               </div>
@@ -217,6 +235,7 @@ const ProjectsSection = () => {
             size="lg"
             variant="outline"
             className="glass-card border-white/20 text-white hover:bg-white/10 hover:scale-105 transition-all duration-300"
+            onClick={() => window.open('https://github.com/SaiSathwikAnchuri', '_blank')}
           >
             View All Projects on GitHub
             <Github className="ml-2 h-5 w-5" />

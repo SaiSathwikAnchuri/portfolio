@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import TypewriterText from './TypewriterText';
@@ -18,8 +17,25 @@ const HeroSection = () => {
   };
 
   const handleDownloadCV = () => {
-    // This would typically download a CV file
-    console.log('Download CV clicked');
+    try {
+      // Create a temporary anchor element to trigger download
+      const link = document.createElement('a');
+      link.href = '/Resume.pdf'; // Place your PDF in public/cv/ folder
+      link.download = 'Resume.pdf'; // Filename for download
+      link.target = '_blank'; // Fallback to open in new tab if download fails
+      
+      // Temporarily add to DOM, click, then remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Optional: Add analytics tracking
+      console.log('Resume download initiated');
+    } catch (error) {
+      console.error('Error downloading Resume:', error);
+      // You could add a toast notification here for user feedback
+      alert('Sorry, there was an error downloading the Resume. Please try again.');
+    }
   };
 
   return (
@@ -32,7 +48,7 @@ const HeroSection = () => {
           <div className="relative mx-auto w-48 h-48 floating-animation">
             <div className="w-full h-full rounded-full glass-card overflow-hidden glow-pulse">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                src="/1.jpg" // Ensure this path is correct
                 alt="Developer Avatar"
                 className="w-full h-full object-cover"
               />
@@ -43,7 +59,7 @@ const HeroSection = () => {
           {/* Name & Title */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold text-gradient">
-              Alex Chen
+              Saisathwik Anchuri
             </h1>
             <div className="text-2xl md:text-3xl text-white/80 h-16">
               <TypewriterText 
@@ -78,7 +94,7 @@ const HeroSection = () => {
               onClick={handleDownloadCV}
             >
               <Download className="mr-2 h-5 w-5" />
-              Download CV
+              Download Resume
             </Button>
             <Button 
               size="lg" 
@@ -94,15 +110,17 @@ const HeroSection = () => {
           {/* Social Links */}
           <div className="flex gap-6 justify-center">
             {[
-              { Icon: Github, href: "#", label: "GitHub" },
-              { Icon: Linkedin, href: "#", label: "LinkedIn" },
-              { Icon: Mail, href: "#", label: "Email" }
+              { Icon: Github, href: "https://github.com/SaiSathwikAnchuri", label: "GitHub" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/saisathwik-anchuri-604b85292", label: "LinkedIn" },
+              { Icon: Mail, href: "mailto:saisathwik1402@gmail.com", label: "Email" }
             ].map(({ Icon, href, label }) => (
               <a
                 key={label}
                 href={href}
                 className="w-12 h-12 glass-card rounded-full flex items-center justify-center text-white/70 hover:text-white hover:scale-110 transition-all duration-300 neon-glow"
                 aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Icon className="h-5 w-5" />
               </a>

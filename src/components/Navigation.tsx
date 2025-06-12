@@ -43,7 +43,7 @@ const Navigation = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <Code className="h-6 w-6 text-blue-400" />
-            Alex Chen
+            Saisathwik Anchuri
           </a>
 
           {/* Desktop Navigation */}

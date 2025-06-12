@@ -29,7 +29,7 @@ const Index = () => {
       <footer className="py-8 border-t border-white/10">
         <div className="container mx-auto px-6 text-center">
           <p className="text-white/60">
-            © 2024 Alex Chen. Crafted with ❤️ and cutting-edge technology.
+            © 2025 Saisathwik Anchuri. Crafted with ❤️ and cutting-edge technology.
           </p>
         </div>
       </footer>
