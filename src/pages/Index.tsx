@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import ParticleBackground from '@/components/ParticleBackground';
 import HeroSection from '@/components/HeroSection';
+import ScrollDownSection from '@/components/ScrollDownSection';
 import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
@@ -16,6 +17,7 @@ const Index = () => {
       <ParticleBackground />
       <Navigation />
       <HeroSection />
+      <ScrollDownSection />
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
