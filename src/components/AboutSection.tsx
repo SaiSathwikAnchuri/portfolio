@@ -16,7 +16,7 @@ const AboutSection = () => {
   const tabContent = {
     story: {
       title: "My Story",
-      content: "I'm a passionate full-stack developer with over 5 years of experience in creating innovative web applications. My journey began with a curiosity about how websites work, and it has evolved into a deep love for crafting digital experiences that make a difference. I specialize in modern JavaScript frameworks, particularly React and Node.js, and I'm always excited to learn new technologies."
+      content: "I'm a passionate full-stack developer in creating innovative web applications. My journey began with a curiosity about how websites work, and it has evolved into a deep love for crafting digital experiences that make a difference. I specialize in modern JavaScript frameworks, particularly React and Node.js, and I'm always excited to learn new technologies."
     },
     passion: {
       title: "What Drives Me",
