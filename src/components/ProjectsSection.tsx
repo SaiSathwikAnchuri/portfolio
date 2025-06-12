@@ -113,14 +113,12 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
+        {/* Projects Grid - 3 per row */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <Card
               key={project.id}
-              className={`glass-card overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 ${
-                project.featured ? 'lg:col-span-2 lg:row-span-1' : ''
-              }`}
+              className="glass-card overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105"
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
               style={{ 

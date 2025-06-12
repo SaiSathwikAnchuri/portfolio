@@ -1,0 +1,96 @@
+
+import React from 'react';
+import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+
+const CertificationsSection = () => {
+  const certifications = [
+    {
+      title: "Webathon 3.0 Winner",
+      issuer: "Overnight Hackathon",
+      year: "2025",
+      icon: "🏆",
+      description: "First place winner in the overnight hackathon competition",
+      color: "from-yellow-400 to-orange-500"
+    },
+    {
+      title: "Inter IT Competitive Programming Conclave",
+      issuer: "Inter IT Consortium",
+      year: "2024",
+      icon: "💻",
+      description: "Competitive programming excellence recognition",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      title: "HacktoberFest 2024 Contributor",
+      issuer: "DigitalOcean & Holopin",
+      year: "2024",
+      icon: "🌟",
+      description: "Active contributor to open source projects during Hacktoberfest",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      title: "Cyber Security Certification",
+      issuer: "Microsoft-TataStrive",
+      year: "2024",
+      icon: "🔒",
+      description: "Comprehensive cybersecurity fundamentals and best practices",
+      color: "from-red-500 to-rose-500"
+    }
+  ];
+
+  return (
+    <section id="certifications" className="py-20 relative">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
+            Certifications & Achievements
+          </h2>
+          <p className="text-xl text-white/70 max-w-2xl mx-auto">
+            Professional qualifications and recognitions in the field
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          {certifications.map((cert, index) => (
+            <Card
+              key={cert.title}
+              className="glass-card p-6 hover:scale-[1.02] transition-all duration-500 group"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="flex items-center gap-6">
+                {/* Icon with gradient background */}
+                <div className={`p-4 rounded-full bg-gradient-to-r ${cert.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
+                  {cert.icon}
+                </div>
+
+                {/* Content */}
+                <div className="flex-1">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="text-xl font-bold text-white group-hover:text-gradient transition-all duration-300">
+                      {cert.title}
+                    </h3>
+                    <Badge className={`bg-gradient-to-r ${cert.color} text-white border-0 ml-4`}>
+                      {cert.year}
+                    </Badge>
+                  </div>
+                  <p className="text-white/70 mb-2 font-medium">
+                    {cert.issuer}
+                  </p>
+                  <p className="text-white/60 text-sm">
+                    {cert.description}
+                  </p>
+                </div>
+
+                {/* Decorative line */}
+                <div className="w-1 h-16 bg-gradient-to-b from-blue-500 to-magenta-500 rounded-full opacity-30 group-hover:opacity-70 transition-opacity duration-300"></div>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CertificationsSection;
