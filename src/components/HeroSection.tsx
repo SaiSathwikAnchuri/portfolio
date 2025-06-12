@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import TypewriterText from './TypewriterText';
-import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Download } from 'lucide-react';
 
 const HeroSection = () => {
   const typingTexts = [
@@ -15,6 +15,11 @@ const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleDownloadCV = () => {
+    // This would typically download a CV file
+    console.log('Download CV clicked');
   };
 
   return (
@@ -66,6 +71,14 @@ const HeroSection = () => {
             >
               <ExternalLink className="mr-2 h-5 w-5" />
               View Projects
+            </Button>
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white border-0 neon-glow transform hover:scale-105 transition-all duration-300"
+              onClick={handleDownloadCV}
+            >
+              <Download className="mr-2 h-5 w-5" />
+              Download CV
             </Button>
             <Button 
               size="lg" 

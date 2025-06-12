@@ -4,29 +4,6 @@ import { Card } from '@/components/ui/card';
 import { Code, Heart, Zap, Users } from 'lucide-react';
 
 const AboutSection = () => {
-  const timeline = [
-    {
-      year: "2018",
-      title: "Started Coding Journey",
-      description: "Discovered the magic of programming with Python and fell in love with problem-solving."
-    },
-    {
-      year: "2020",
-      title: "First Internship",
-      description: "Joined a startup as a frontend developer, learned React and modern web development."
-    },
-    {
-      year: "2022",
-      title: "Full-Stack Developer",
-      description: "Expanded to backend development, mastering Node.js, databases, and cloud technologies."
-    },
-    {
-      year: "2024",
-      title: "Creative Technologist",
-      description: "Now blending creativity with technology, building innovative solutions that inspire."
-    }
-  ];
-
   const dnaTraits = [
     { icon: Code, trait: "Problem Solver", description: "I love turning complex challenges into elegant solutions" },
     { icon: Heart, trait: "User Advocate", description: "Every line of code I write has the user experience in mind" },
@@ -47,28 +24,27 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* Timeline */}
+        {/* About Description */}
         <div className="mb-20">
-          <h3 className="text-2xl font-bold text-white mb-12 text-center">My Evolution</h3>
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 via-magenta-500 to-emerald-500 rounded-full opacity-30" />
-            
-            {timeline.map((item, index) => (
-              <div key={index} className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                <Card className={`glass-card p-6 max-w-md hover:scale-105 transition-all duration-300 ${index % 2 === 0 ? 'mr-8' : 'ml-8'}`}>
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-magenta-500 flex items-center justify-center text-white font-bold">
-                      {item.year}
-                    </div>
-                    <h4 className="text-xl font-semibold text-white">{item.title}</h4>
-                  </div>
-                  <p className="text-white/70">{item.description}</p>
-                </Card>
-                
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-blue-500 to-magenta-500 rounded-full border-4 border-background" />
-              </div>
-            ))}
-          </div>
+          <Card className="glass-card p-8 max-w-4xl mx-auto">
+            <div className="text-center space-y-6">
+              <p className="text-lg text-white/80 leading-relaxed">
+                I'm a passionate full-stack developer with over 5 years of experience in creating innovative web applications. 
+                My journey began with a curiosity about how websites work, and it has evolved into a deep love for crafting 
+                digital experiences that make a difference.
+              </p>
+              <p className="text-lg text-white/80 leading-relaxed">
+                I specialize in modern JavaScript frameworks, particularly React and Node.js, and I'm always excited to learn 
+                new technologies. Whether it's building scalable backends, creating intuitive user interfaces, or optimizing 
+                performance, I approach every project with attention to detail and a commitment to excellence.
+              </p>
+              <p className="text-lg text-white/80 leading-relaxed">
+                When I'm not coding, you'll find me contributing to open-source projects, sharing knowledge through tech talks, 
+                or exploring the latest trends in web development. I believe in the power of technology to solve real-world 
+                problems and am always looking for opportunities to make a positive impact.
+              </p>
+            </div>
+          </Card>
         </div>
 
         {/* Developer DNA */}

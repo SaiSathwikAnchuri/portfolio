@@ -63,9 +63,27 @@ const ContactSection = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub", color: "hover:text-gray-300" },
-    { icon: Linkedin, href: "#", label: "LinkedIn", color: "hover:text-blue-400" },
-    { icon: Twitter, href: "#", label: "Twitter", color: "hover:text-blue-300" }
+    { 
+      icon: Github, 
+      href: "https://github.com/alexchen", 
+      label: "GitHub", 
+      color: "hover:text-gray-300",
+      description: "Check out my latest projects and contributions"
+    },
+    { 
+      icon: Linkedin, 
+      href: "https://linkedin.com/in/alexchen", 
+      label: "LinkedIn", 
+      color: "hover:text-blue-400",
+      description: "Connect with me professionally"
+    },
+    { 
+      icon: Twitter, 
+      href: "#", 
+      label: "Twitter", 
+      color: "hover:text-blue-300",
+      description: "Follow for tech insights and updates"
+    }
   ];
 
   return (
@@ -83,7 +101,7 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="glass-card p-8">
+          <Card className="glass-card p-8 bg-white/5 backdrop-blur-sm border-white/10">
             <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -185,15 +203,20 @@ const ContactSection = () => {
             {/* Social Links */}
             <Card className="glass-card p-8">
               <h3 className="text-2xl font-bold text-white mb-6">Connect With Me</h3>
-              <div className="flex gap-4">
+              <div className="space-y-4">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
-                    className={`w-12 h-12 glass-card rounded-full flex items-center justify-center text-white/70 ${social.color} hover:scale-110 transition-all duration-300 neon-glow`}
-                    aria-label={social.label}
+                    className={`flex items-center gap-4 p-3 rounded-lg glass-card text-white/70 ${social.color} hover:scale-105 transition-all duration-300 group`}
                   >
-                    <social.icon className="h-5 w-5" />
+                    <div className="w-10 h-10 glass-card rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <social.icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <div className="font-medium text-white">{social.label}</div>
+                      <div className="text-sm text-white/60">{social.description}</div>
+                    </div>
                   </a>
                 ))}
               </div>
