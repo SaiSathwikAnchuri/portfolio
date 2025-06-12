@@ -36,6 +36,22 @@ const CertificationsSection = () => {
       icon: "🔒",
       description: "Comprehensive cybersecurity fundamentals and best practices",
       color: "from-red-500 to-rose-500"
+    },
+    {
+      title: "AWS Cloud Practitioner",
+      issuer: "Amazon Web Services",
+      year: "2024",
+      icon: "☁️",
+      description: "Cloud computing fundamentals and AWS services expertise",
+      color: "from-orange-500 to-yellow-500"
+    },
+    {
+      title: "Google Analytics Certified",
+      issuer: "Google",
+      year: "2023",
+      icon: "📊",
+      description: "Web analytics and data-driven decision making certification",
+      color: "from-green-500 to-emerald-500"
     }
   ];
 
